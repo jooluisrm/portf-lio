@@ -4,3 +4,45 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Container do site */
+.container {
+    margin: 0 200px;
+}
+
+/* Header do site */
+header {
+    background-color: rgb(37, 35, 35);
+    color: white;
+    height: 100px;
+}
+header .container {
+    height: 100%;
+}
+header .header-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container .header-titulo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header-perfil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.5s;
+}
+.header-container .header-perfil img {
+    width: 60px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    transition: all 0.5s;
+}
+.header-container .header-perfil {
+    font-size: 18px;
+}

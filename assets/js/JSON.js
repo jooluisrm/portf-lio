@@ -6,3 +6,8 @@ const sites = [
         urlSite: "https://jooluisrm.github.io/relogio_digital/"
     },
 ];
+
+const meuPerfil = {
+    name: "João Luís R. de Moura",
+    img: "assets/fotoPerfil.jpeg"
+}
