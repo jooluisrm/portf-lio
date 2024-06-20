@@ -62,11 +62,98 @@ header .header-container {
     padding-top: 50px;
     background-color: rgba(0, 0, 0, 0.600);
     height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .fundo-preto .perfil-container {
-    background-color: #a5a5a5;
+    background-color: #fff;
     height: 400px;
     border-radius: 20px;
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.459);
     padding: 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.perfil-container .buttonX {
+    background-color: #ccc;
+    position: fixed;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 100%;
+    transition: all 0.3s;
+}
+.buttonX:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.perfil-container .perfil-esquerdo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-right: 1px solid black;
+}
+.perfil-esquerdo .foto-perfil {
+    width: 150px;
+    border-radius: 100%;
+    border: 3px solid #ccc;
+}
+.perfil-esquerdo .meuNome {
+    font-size: 18px;
+    font-weight: 600;
+}
+.perfil-esquerdo .minhaFuncao {
+    font-size: 16px;
+    font-weight: bold;
+    color: #505050;
+}
+.perfil-esquerdo .tecnologias-perfil h3 {
+    margin-top: 5px;
+}
+.perfil-esquerdo .tecnologias-perfil .imgs-tec {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.perfil-esquerdo .tecnologias-perfil .imgs-tec img {
+    width: 32px;
+}
+.perfil-esquerdo .redesSociais {
+    margin-top: 5px;
+}
+.perfil-esquerdo .redesSociais .imgs-social {
+    margin-top: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+} 
+
+
+
+.perfil-direito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgb(0, 0, 0);
+}
+.perfil-direito .textSobreMim {
+    width: 300px;
+    padding: 20px;
+}
+.perfil-direito .textSobreMim .titleSobreMim {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.textSobreMim .textBox p{
+    text-align: center;
+    line-height: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #464646;
 }
