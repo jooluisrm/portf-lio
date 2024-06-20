@@ -32,17 +32,21 @@ header .header-container {
 }
 
 .header-perfil {
+    width: 260px;
+    height: 50px;
     display: flex;
     align-items: center;
+    justify-content: left;
     gap: 10px;
-    transition: all 0.5s;
 }
 .header-container .header-perfil img {
     width: 60px;
     border-radius: 100%;
     border: 1px solid #ccc;
+    position: absolute;
+    right: 200px;
     transition: all 0.5s;
 }
-.header-container .header-perfil {
+.header-container .header-perfil .perfil-nome {
     font-size: 18px;
 }

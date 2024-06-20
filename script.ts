@@ -10,7 +10,7 @@ const sites = [
 const meuPerfil = {
     name: "João Luís R. de Moura",
     img: "assets/img/fotoPerfil.jpeg"
-}
+};
 
 
 // script do header
@@ -20,6 +20,7 @@ let nomePerfil = document.querySelector('.perfil-nome') as HTMLElement;
 let imgPerfil: any = document.querySelector('.header-perfil img');
 
 function carregarPerfil() {
+    nomePerfil.innerHTML = meuPerfil.name;
     imgPerfil.src = `${meuPerfil.img}`;
 }
 carregarPerfil();
@@ -29,10 +30,11 @@ perfil.addEventListener('mouseenter', () => {
     imgPerfil.style.transform = 'scale(1.1)';
     perfil.style.gap = '15px';
     perfil.style.cursor = 'pointer';
-
+    nomePerfil.style.transform = 'translateX(55px)';
 });
 perfil.addEventListener('mouseleave', () => {
     nomePerfil.innerHTML = `${meuPerfil.name}`;
     imgPerfil.style.transform = 'scale(1.0)';
     perfil.style.gap = '10px';
+    nomePerfil.style.transform = 'translateX(0)';
 });
