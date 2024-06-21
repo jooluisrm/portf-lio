@@ -56,7 +56,7 @@ header .header-container {
 /* Perfil quando Ativado */
 
 .sobreMim {
-    display: block;  /* Mudar para none via Js para sumir */
+    display: none;  /* Mudar para none via Js para sumir */
 }
 .sobreMim .fundo-preto {
     padding-top: 50px;

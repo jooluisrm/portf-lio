@@ -38,3 +38,27 @@ perfil.addEventListener('mouseleave', () => {
     perfil.style.gap = '10px';
     nomePerfil.style.transform = 'translateX(0)';
 });
+
+
+
+// script para abrir e fechar o Meu Perfil
+
+let sobreMim = document.querySelector('.sobreMim') as HTMLElement;
+let fecharX = document.querySelector('.buttonX') as HTMLElement;
+let meuNome = document.querySelector('.meuNome') as HTMLElement;
+let minhaFoto: any = document.querySelector('.foto-perfil');
+
+perfil.addEventListener('click', () => {
+    if(sobreMim.style.display !== 'none') {
+        sobreMim.style.display = 'none';
+    };
+    sobreMim.style.display = 'block'
+    meuNome.innerHTML = meuPerfil.name;
+    minhaFoto.src = meuPerfil.img;
+    
+});
+fecharX.addEventListener('click', () => {
+    if(sobreMim.style.display === 'block') {
+        sobreMim.style.display = 'none';
+    };
+});
