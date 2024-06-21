@@ -11,3 +11,5 @@ const meuPerfil = {
     name: "João Luís R. de Moura",
     img: "assets/fotoPerfil.jpeg"
 }
+
+console.log(sites[0])
