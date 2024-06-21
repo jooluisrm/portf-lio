@@ -10,15 +10,15 @@ const sites: any = [
         img: "assets/img/veterinarioLoja.png",
         titulo: "Uma loja virtual de veterinario", 
         desc: "Um site feito em HTML, CSS", 
-        urlGitHub: "https://github.com/jooluisrm/relogio_digital", 
-        urlSite: "https://jooluisrm.github.io/relogio_digital/"
+        urlGitHub: "https://github.com/jooluisrm/PetShoop", 
+        urlSite: "https://jooluisrm.github.io/PetShoop/"
     },
     {   
         img: "assets/img/zairtonLoja.png",
         titulo: "Loja Virtual", 
         desc: "Um site feito em HTML, CSS & JS", 
-        urlGitHub: "https://github.com/jooluisrm/relogio_digital", 
-        urlSite: "https://jooluisrm.github.io/relogio_digital/"
+        urlGitHub: "https://github.com/jooluisrm/Zaitron", 
+        urlSite: "https://jooluisrm.github.io/Zaitron/"
     }
 ];
 
@@ -92,14 +92,24 @@ fecharX.addEventListener('click', () => {
 let gridContainer = document.querySelector('.grid-container') as HTMLElement;
 
 function carregarProjetos() {
-    for(let i = 0; i < sites.length; i++) {
-        let newGrids = document.createElement('div');
+    let newGrids;
+    for(let i = 0; i < sites.length; i++) {                  // Cria as divs do projeto dinamicamete 
+        newGrids = document.createElement('div');
         newGrids.setAttribute('class', 'grid-projetos');
+        newGrids.setAttribute('data-key', `${i}`);
         newGrids.innerHTML = `<img src="${sites[i].img}" alt="">`;
         newGrids.innerHTML += `<h2>${sites[i].titulo}</h2>`;
         newGrids.innerHTML += `<p>${sites[i].desc}</p>`;
 
         gridContainer.appendChild(newGrids);
-    }
+    };
+
+    document.querySelectorAll('.grid-projetos').forEach((gridProjeto) => {      // difefencia as dives atraves do "data-key" para manipular qual div foi clicada
+        gridProjeto.addEventListener('click', (e: any) => {
+            const dataKey = e.currentTarget.dataset.key;
+            console.log('Data key:', dataKey, "URL: ", sites[dataKey].urlSite);
+        });
+    });
+
 }
 carregarProjetos();
