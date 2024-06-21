@@ -1,5 +1,61 @@
 const sites: any = [
     {   
+        img: "assets/img/desenho.png",
+        titulo: "Desenho", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Projeto_Desenho", 
+        urlSite: "https://jooluisrm.github.io/Projeto_Desenho/"
+    },
+    {   
+        img: "assets/img/clima.png",
+        titulo: "Clima", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Projeto_Clima", 
+        urlSite: "https://jooluisrm.github.io/Projeto_Clima/"
+    },
+    {   
+        img: "assets/img/relogioAnalogico.png",
+        titulo: "Relogio Analogico", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Relogio_Antigo", 
+        urlSite: "https://jooluisrm.github.io/Relogio_Antigo/"
+    },
+    {   
+        img: "assets/img/jogoDaVelha.png",
+        titulo: "Jogo da Velha", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Projeto_JogoDaVelha", 
+        urlSite: "https://jooluisrm.github.io/Projeto_JogoDaVelha/"
+    },
+    {   
+        img: "assets/img/pizza.png",
+        titulo: "Pizzaria", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Projeto_Pizza", 
+        urlSite: "https://jooluisrm.github.io/Projeto_Pizza/"
+    },
+    {   
+        img: "assets/img/quiz.png",
+        titulo: "Quiz", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Projeto_Quiz", 
+        urlSite: "https://jooluisrm.github.io/Projeto_Quiz/"
+    },
+    {   
+        img: "assets/img/bateria.png",
+        titulo: "Bateria", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Projeto_Bateria", 
+        urlSite: "https://jooluisrm.github.io/Projeto_Bateria/"
+    },
+    {   
+        img: "assets/img/arrastaeSolta.png",
+        titulo: "Arrasta e Solta", 
+        desc: "Um site feito em HTML, CSS & JS", 
+        urlGitHub: "https://github.com/jooluisrm/Projeto_Arrasta_Solta", 
+        urlSite: "https://jooluisrm.github.io/Projeto_Arrasta_Solta/"
+    },
+    {   
         img: "assets/img/relogioDigital.png",
         titulo: "Relógio Digital", 
         desc: "Um site feito em HTML, CSS & JS", 
