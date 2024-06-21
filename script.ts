@@ -42,7 +42,7 @@ perfil.addEventListener('mouseleave', () => {
 
 
 // script para abrir e fechar o Meu Perfil
-
+let mainProjct = document.querySelector('main') as HTMLElement; 
 let sobreMim = document.querySelector('.sobreMim') as HTMLElement;
 let fecharX = document.querySelector('.buttonX') as HTMLElement;
 let meuNome = document.querySelector('.meuNome') as HTMLElement;
@@ -52,7 +52,12 @@ perfil.addEventListener('click', () => {
     if(sobreMim.style.display !== 'none') {
         sobreMim.style.display = 'none';
     };
-    sobreMim.style.display = 'block'
+    sobreMim.style.display = 'block';
+    if(mainProjct.style.display !== 'none') {
+        mainProjct.style.display = 'none';
+    };
+
+
     meuNome.innerHTML = meuPerfil.name;
     minhaFoto.src = meuPerfil.img;
     
@@ -61,4 +66,7 @@ fecharX.addEventListener('click', () => {
     if(sobreMim.style.display === 'block') {
         sobreMim.style.display = 'none';
     };
+    if(mainProjct.style.display === 'none') {
+        mainProjct.style.display = 'block';
+    }
 });
