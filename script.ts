@@ -146,6 +146,16 @@ fecharX.addEventListener('click', () => {
 // Carregar Projetos
 
 let gridContainer = document.querySelector('.grid-container') as HTMLElement;
+let fundoProjetoSelecionado = document.querySelector('.fundo-projeto') as HTMLElement; // elemento para trocar display none ou flex
+let fecharProjetoSelecionado = document.querySelector('.projetoSelecionado .grid-projetos .fecharX') as HTMLElement;  // Elemento para fechar aba
+
+// Vai exibir o projeto selecionado
+
+let imgProjetoSelecionado: any = fundoProjetoSelecionado.querySelector('.grid-projetos img');
+let tituloProjetoSelecionado = fundoProjetoSelecionado.querySelector('.grid-projetos h2') as HTMLElement;
+let descProjetoSelecionado = fundoProjetoSelecionado.querySelector('.grid-projetos p') as HTMLElement;
+let linkRepositorio = fundoProjetoSelecionado.querySelector('.grid-projetos .linksOpt .repositorio') as HTMLLinkElement;
+let linkSite = fundoProjetoSelecionado.querySelector('.grid-projetos .linksOpt .site') as HTMLLinkElement;
 
 function carregarProjetos() {
     let newGrids;
@@ -160,10 +170,28 @@ function carregarProjetos() {
         gridContainer.appendChild(newGrids);
     };
 
-    document.querySelectorAll('.grid-projetos').forEach((gridProjeto) => {      // difefencia as dives atraves do "data-key" para manipular qual div foi clicada
+    document.querySelectorAll('.grid-container .grid-projetos').forEach((gridProjeto) => {      // difefencia as dives atraves do "data-key" para manipular qual div foi clicada
         gridProjeto.addEventListener('click', (e: any) => {
             const dataKey = e.currentTarget.dataset.key;
-            console.log('Data key:', dataKey, "URL: ", sites[dataKey].urlSite);
+            fundoProjetoSelecionado.style.display = 'flex';  // projeto selecionado fica visivel
+            fundoProjetoSelecionado.style.opacity = '0.0';
+
+            setInterval( () => {
+                fundoProjetoSelecionado.style.opacity = '1';
+            }, 200)
+
+            if (fundoProjetoSelecionado.style.display === 'flex') {   // esta fechando a aba do projeto selecionado
+                fecharProjetoSelecionado.addEventListener('click', () => {
+                    fundoProjetoSelecionado.style.display = 'none';
+                });
+            };
+
+            imgProjetoSelecionado.src = `${sites[dataKey].img}`;
+            tituloProjetoSelecionado.innerHTML = `${sites[dataKey].titulo}`;
+            descProjetoSelecionado.innerHTML = `${sites[dataKey].desc}`;
+            linkSite.href = `${sites[dataKey].urlSite}`;
+            linkRepositorio.href = `${sites[dataKey].urlGitHub}`;
+
         });
     });
 

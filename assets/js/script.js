@@ -134,6 +134,14 @@ fecharX.addEventListener('click', () => {
 });
 // Carregar Projetos
 let gridContainer = document.querySelector('.grid-container');
+let fundoProjetoSelecionado = document.querySelector('.fundo-projeto'); // elemento para trocar display none ou flex
+let fecharProjetoSelecionado = document.querySelector('.projetoSelecionado .grid-projetos .fecharX'); // Elemento para fechar aba
+// Vai exibir o projeto selecionado
+let imgProjetoSelecionado = fundoProjetoSelecionado.querySelector('.grid-projetos img');
+let tituloProjetoSelecionado = fundoProjetoSelecionado.querySelector('.grid-projetos h2');
+let descProjetoSelecionado = fundoProjetoSelecionado.querySelector('.grid-projetos p');
+let linkRepositorio = fundoProjetoSelecionado.querySelector('.grid-projetos .linksOpt .repositorio');
+let linkSite = fundoProjetoSelecionado.querySelector('.grid-projetos .linksOpt .site');
 function carregarProjetos() {
     let newGrids;
     for (let i = 0; i < sites.length; i++) { // Cria as divs do projeto dinamicamete 
@@ -146,10 +154,25 @@ function carregarProjetos() {
         gridContainer.appendChild(newGrids);
     }
     ;
-    document.querySelectorAll('.grid-projetos').forEach((gridProjeto) => {
+    document.querySelectorAll('.grid-container .grid-projetos').forEach((gridProjeto) => {
         gridProjeto.addEventListener('click', (e) => {
             const dataKey = e.currentTarget.dataset.key;
-            console.log('Data key:', dataKey, "URL: ", sites[dataKey].urlSite);
+            fundoProjetoSelecionado.style.display = 'flex'; // projeto selecionado fica visivel
+            fundoProjetoSelecionado.style.opacity = '0.0';
+            setInterval(() => {
+                fundoProjetoSelecionado.style.opacity = '1';
+            }, 200);
+            if (fundoProjetoSelecionado.style.display === 'flex') { // esta fechando a aba do projeto selecionado
+                fecharProjetoSelecionado.addEventListener('click', () => {
+                    fundoProjetoSelecionado.style.display = 'none';
+                });
+            }
+            ;
+            imgProjetoSelecionado.src = `${sites[dataKey].img}`;
+            tituloProjetoSelecionado.innerHTML = `${sites[dataKey].titulo}`;
+            descProjetoSelecionado.innerHTML = `${sites[dataKey].desc}`;
+            linkSite.href = `${sites[dataKey].urlSite}`;
+            linkRepositorio.href = `${sites[dataKey].urlGitHub}`;
         });
     });
 }
